@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WandbGraph from '../components/WandbGraph.astro';
+
+const githubId = "jchaerry"; 
+const chartColor = "219138"; 
+---
+
+<BaseLayout title="Dashboard" description="My Dashboard" showHeader={false}>
+    <h1 class="mb-12 font-serif text-2xl leading-tight italic sm:mb-16 sm:text-4xl">Dashboard</h1>
+    
+    <section class="mb-16">
+        <h2 class="mb-8 font-serif text-xl italic">GitHub Activity</h2>
+        <div class="flex justify-center sm:p-8">
+            <img 
+                src={`https://ghchart.rshah.org/${chartColor}/${githubId}`} 
+                alt={`${githubId}'s GitHub Contributions`} 
+                class="w-full max-w-4xl"
+                loading="lazy"
+            />
+        </div>
+    </section>
+
+    <section class="mb-16">
+        <h2 class="mb-8 font-serif text-xl italic">Schedule</h2>
+        
+        <div class="flex w-full justify-center overflow-hidden rounded-xl">
+            
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FSeoul&showPrint=0&mode=WEEK&src=Y2hhZXJyeTUwMkBzb29rbXl1bmcuYWMua3I&color=%23f6bf26" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            
+        </div>
+    </section>
+
+</BaseLayout>
