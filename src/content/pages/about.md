@@ -11,7 +11,7 @@ seo:
 <!-- ![Chaeri Jung](../../assets/images/about.jpg) -->
 <div class="my-12">
     <img 
-        src="../../../public/about.jpg" 
+        src="../../assets/images/about.jpg" 
         alt="Chaeri Jung" 
         class="w-96 h-auto rounded-2xl shadow-lg"
     />
