@@ -66,7 +66,7 @@ const siteConfig: SiteConfig = {
         },
         {
             text: 'Scholar',
-            href: 'https://scholar.google.com/'
+            href: 'https://scholar.google.com/citations?user=KEQFoAMAAAAJ&hl'
         },
         {
             text: 'LinkedIn',
