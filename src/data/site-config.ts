@@ -3,7 +3,7 @@ import hero from '../assets/images/hero.jpg';
 import type { SiteConfig } from '../types';
 
 const siteConfig: SiteConfig = {
-    website: 'https://jchaerry.github.io',
+    website: 'https://chaeri.net',
     avatar: {
         src: avatar,
         alt: 'Chaeri Jung'

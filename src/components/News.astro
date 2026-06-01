@@ -1,0 +1,21 @@
+---
+// src/components/News.astro
+import newsList from '../data/news.json';
+
+const latestNews = newsList.slice(0, 5);
+---
+
+<div class="mb-10 sm:mb-12">
+    <h2 class="mb-8 font-serif text-xl italic sm:mb-12 sm:text-2xl">News</h2>
+    
+    <ul class="flex flex-col gap-6 sm:gap-8">
+        {latestNews.map((news) => (
+            <li class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-6">
+                <span class="text-lg text-gray-500 dark:text-gray-400 min-w-[140px] shrink-0">
+                    {news.date}
+                </span>
+                <p class="text-xl text-gray-900 dark:text-gray-100 leading-relaxed" set:html={news.title} />
+            </li>
+        ))}
+    </ul>
+</div>

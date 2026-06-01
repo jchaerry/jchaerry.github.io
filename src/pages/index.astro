@@ -7,6 +7,7 @@ import ProjectPreview from '../components/ProjectPreview.astro';
 import siteConfig from '../data/site-config';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { sortItemsByDateDesc } from '../utils/data-utils';
+import News from '../components/News.astro';
 
 const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
 const featuredPosts = posts.filter(({ data }) => data.isFeatured);
@@ -17,6 +18,11 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 
 <BaseLayout description={siteConfig.description}>
     <Hero {...siteConfig.hero} />
+
+    <div class="mb-16 sm:mb-24">
+        <News />
+    </div>
+    
     {
         featuredProjects?.length > 0 && (
             <div class="mb-16 sm:mb-24">
