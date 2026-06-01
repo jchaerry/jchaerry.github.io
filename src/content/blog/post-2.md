@@ -12,7 +12,7 @@ seo:
 
 I recently submitted my second paper on May 31st. I hope for a positive outcome.
 
-I would like to express my sincere gratitude to my advisor, Professor Seonghoon Jenong, and my colleague, Cheayoung Lee, for their invaluable support and dedication throughout this project.
+I would like to express my sincere gratitude to my advisor, Professor Seonghoon Jeong, and my colleague, Cheayoung Lee, for their invaluable support and dedication throughout this project.
 
 Here are some snapshots from the process:
 
