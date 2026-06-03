@@ -1,10 +1,18 @@
 [
     {
-        "date": "May 11, 2026",
-        "title": "Successfully registered the new custom domain, <strong>chaeri.net</strong>"
+        "date": "Jun 03, 2026",
+        "title": "Awarded a Student Travel Grant for IEEE/IFIP DSN’26."
     },
     {
-        "date": "May 5, 2026",
+        "date": "May 11, 2026",
+        "title": "Successfully registered the new custom domain, <strong>chaeri.net</strong>."
+    },
+    {
+        "date": "May 05, 2026",
         "title": "Officially launched my personal portfolio website."
+    },
+    {
+        "date": "Apr 27, 2026",
+        "title": "Our paper “DRIFT: Drift-Resilient Invariant-Feature Transformer for DGA Detection” (Co-first Author) has received final acceptance for IEEE/IFIP DSN’26."
     }
 ]
