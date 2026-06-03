@@ -7,6 +7,10 @@ export type ImageInput = {
 export type Link = {
     text: string;
     href: string;
+    submenu?: {
+        text: string;
+        href: string;
+    }[];
 };
 
 export type Hero = {

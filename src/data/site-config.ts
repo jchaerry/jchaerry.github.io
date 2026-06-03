@@ -25,6 +25,15 @@ const siteConfig: SiteConfig = {
             href: '/about'
         },
         {
+            text: 'Publications',
+            href: '/publications',
+            submenu: [
+                { text: 'Papers', href: '/publications/papers' },
+                { text: 'Datasets', href: '/publications/datasets' },
+                { text: 'Patents', href: '/publications/patents' }
+            ]
+        },
+        {
             text: 'Projects',
             href: '/projects'
         },

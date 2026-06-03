@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortItemsByDateDesc } from '../../utils/data-utils';
+
+const datasets = (await getCollection('datasets')).sort(sortItemsByDateDesc);
+---
+
+<BaseLayout title="Datasets" showHeader={false}>
+  <div class="mx-auto max-w-3xl px-4 py-10">
+    <h1 class="mb-12 font-serif text-3xl italic text-theme-foreground border-b pb-4 border-gray-200 dark:border-gray-800">
+      Datasets
+    </h1>
+
+    {datasets.length > 0 ? (
+      <div class="flex flex-col gap-10">
+        {datasets.map((dataset) => (
+          <div class="flex flex-col relative border-l-2 border-gray-200 dark:border-gray-800 pl-5 hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+            
+            {/* 특이사항 뱃지 (초록색 테마) */}
+            {dataset.data.note && (
+              <div class="mb-2">
+                <span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-green-600 bg-green-50 dark:text-green-300 dark:bg-green-900/30 rounded">
+                  {dataset.data.note}
+                </span>
+              </div>
+            )}
+
+            {/* 제목 */}
+            <h2 class="font-serif text-lg font-bold text-gray-900 dark:text-gray-100 mb-1.5 leading-tight">
+              {dataset.data.title}
+            </h2>
+            
+            {/* 사람 (저자) */}
+            <p class="text-[14px] text-gray-600 dark:text-gray-400 mb-1 leading-relaxed">
+              {dataset.data.authors}
+            </p>
+            
+            {/* 공개 사이트 */}
+            {dataset.data.site && (
+              <p class="text-[13px] italic text-gray-400 dark:text-gray-500 mb-3">
+                {dataset.data.site}
+              </p>
+            )}
+            
+            {/* 하이퍼링크 */}
+            {dataset.data.url && (
+              <div class="mt-1">
+                <a 
+                  href={dataset.data.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="text-xs font-medium text-gray-400 hover:text-black dark:hover:text-white transition-colors underline underline-offset-4 decoration-gray-200 dark:decoration-gray-800"
+                >
+                  View Dataset ↗
+                </a>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    ) : (
+      <p class="text-sm text-gray-400 italic">No datasets published yet.</p>
+    )}
+  </div>
+</BaseLayout>

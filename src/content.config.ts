@@ -50,4 +50,42 @@ const projects = defineCollection({
         })
 });
 
-export const collections = { blog, pages, projects };
+const papers = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/papers' }),
+    schema: z.object({
+        title: z.string(),
+        authors: z.string(),
+        venue: z.string().optional(),
+        paperUrl: z.string().url().optional(),
+        publishDate: z.coerce.date(),
+        note: z.string().optional(),
+        selected: z.boolean().optional(),
+    })
+});
+
+const datasets = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/datasets' }),
+    schema: z.object({
+        title: z.string(),
+        authors: z.string(),
+        site: z.string().optional(),
+        url: z.string().url().optional(),
+        publishDate: z.coerce.date(),
+        note: z.string().optional(),
+    })
+});
+
+const patents = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/patents' }),
+    schema: z.object({
+        title: z.string(),
+        inventors: z.string(),
+        country: z.string().optional(),
+        patentNumber: z.string().optional(),
+        url: z.string().url().optional(),
+        publishDate: z.coerce.date(),
+        note: z.string().optional(),
+    })
+});
+
+export const collections = { blog, pages, projects, papers, datasets, patents };

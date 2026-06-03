@@ -23,13 +23,34 @@ const navLinks = siteConfig.headerNavLinks ?? [];
                     class="menu max-md:bg-main max-md:border-main flex gap-6 max-md:absolute max-md:-top-2.5 max-md:-left-2.5 max-md:z-20 max-md:max-w-64 max-md:flex-col max-md:gap-1 max-md:border max-md:border-dashed max-md:px-3 max-md:pt-16 max-md:pb-10"
                 >
                     {navLinks.map((link) => (
-                        <li class="py-1">
-                            <NavLink
-                                class="text-main font-serif text-xl hover:underline hover:decoration-1 hover:underline-offset-2 md:text-base"
-                                href={link.href}
-                            >
-                                {link.text}
-                            </NavLink>
+                        <li class="py-1 relative group">
+                            {/* 💡 하위 메뉴(submenu)가 있으면 버튼으로, 없으면 일반 링크로 렌더링 */}
+                            {link.submenu ? (
+                                <div class="inline-block">
+                                    <button class="text-main font-serif text-xl hover:underline hover:decoration-1 hover:underline-offset-2 md:text-base flex items-center gap-1 cursor-pointer focus:outline-none">
+                                        {link.text}
+                                        <svg class="w-3 h-3 transition-transform group-hover:rotate-180 max-md:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    </button>
+                                    
+                                    {/* 하위 메뉴 드롭다운 박스 (PC에서는 마우스 오버시 작동, 모바일에서는 하단에 자연스럽게 나열) */}
+                                    <div class="md:absolute md:left-0 md:mt-1 md:w-36 rounded-md md:shadow-lg md:bg-white dark:md:bg-gray-900 md:border md:border-gray-100 dark:md:border-gray-800 md:opacity-0 md:invisible group-hover:md:opacity-100 group-hover:md:visible transition-all duration-200 z-50 max-md:pl-4 max-md:mt-1 max-md:space-y-1">
+                                        <div class="py-1 flex flex-col md:block">
+                                            {link.submenu.map((sub) => (
+                                                <a href={sub.href} class="block px-4 py-1.5 text-sm max-md:text-base font-serif text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white md:hover:bg-gray-50 dark:md:hover:bg-gray-800">
+                                                    {sub.text}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <NavLink
+                                    class="text-main font-serif text-xl hover:underline hover:decoration-1 hover:underline-offset-2 md:text-base"
+                                    href={link.href}
+                                >
+                                    {link.text}
+                                </NavLink>
+                            )}
                         </li>
                     ))}
                 </ul>
