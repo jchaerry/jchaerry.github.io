@@ -44,10 +44,15 @@ const selectedPapers = allPapers
 
                             {/* 논문 제목 (누르면 이동) */}
                             <h3 class="font-serif text-lg font-bold text-gray-900 dark:text-gray-100 mb-1.5 leading-tight">
-                                <a href={paper.data.paperUrl || "/publications/papers"} class="hover:underline decoration-1 underline-offset-2">
+                            <a 
+                                href={paper.data.paperUrl || "/publications/papers"} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="hover:underline decoration-1 underline-offset-2"
+                            >
                                     {paper.data.title}
-                                </a>
-                            </h3>
+                            </a>
+                        </h3>
                             
                             {/* 저자 */}
                             <p class="text-[14px] text-gray-600 dark:text-gray-400 mb-1 leading-relaxed">
