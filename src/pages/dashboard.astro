@@ -1,9 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import WandbGraph from '../components/WandbGraph.astro';
 
 const githubId = "jchaerry"; 
-const chartColor = "219138"; 
+const chartColor = "800020"; 
 ---
 
 <BaseLayout title="Dashboard" description="My Dashboard" showHeader={false}>
@@ -11,11 +10,11 @@ const chartColor = "219138";
     
     <section class="mb-16">
         <h2 class="mb-8 font-serif text-xl italic">GitHub Activity</h2>
-        <div class="flex justify-center sm:p-8">
+        <div class="flex justify-center sm:py-4">
             <img 
                 src={`https://ghchart.rshah.org/${chartColor}/${githubId}`} 
                 alt={`${githubId}'s GitHub Contributions`} 
-                class="w-full max-w-4xl"
+                class="w-full max-w-5xl"
                 loading="lazy"
             />
         </div>
@@ -26,7 +25,7 @@ const chartColor = "219138";
         
         <div class="flex w-full justify-center overflow-hidden rounded-xl">
             
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FSeoul&mode=WEEK&showPrint=0&src=Y2hhZXJyeTUwMkBzb29rbXl1bmcuYWMua3I&color=%23f6bf26" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FSeoul&showPrint=0&mode=WEEK&src=Y2hhZXJyeTUwMkBzb29rbXl1bmcuYWMua3I&color=%23800020" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
             
         </div>
     </section>

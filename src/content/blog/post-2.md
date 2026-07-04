@@ -25,8 +25,8 @@ Here are some snapshots from the process:
   padding-bottom: 12px;
   -webkit-overflow-scrolling: touch;
 ">
-  <img src="/post/post-2-1.jpg" alt="Work Process 1" style="scroll-snap-align: start; height: 400px; width: auto; border-radius: 12px; object-fit: contain; shrink-0;" />
-  <img src="/post/post-2-2.jpg" alt="Work Process 2" style="scroll-snap-align: start; height: 400px; width: auto; border-radius: 12px; object-fit: contain; shrink-0;" />
-  <img src="/post/post-2-3.jpg" alt="Work Process 3" style="scroll-snap-align: start; height: 400px; width: auto; border-radius: 12px; object-fit: contain; shrink-0;" />
-  <img src="/post/post-2-4.jpg" alt="Work Process 4" style="scroll-snap-align: start; height: 400px; width: auto; border-radius: 12px; object-fit: contain; shrink-0;" />
+  <img src="/post/2/post-2-1.jpg" alt="Work Process 1" style="scroll-snap-align: start; height: 400px; width: auto; border-radius: 12px; object-fit: contain; shrink-0;" />
+  <img src="/post/2/post-2-2.jpg" alt="Work Process 2" style="scroll-snap-align: start; height: 400px; width: auto; border-radius: 12px; object-fit: contain; shrink-0;" />
+  <img src="/post/2/post-2-3.jpg" alt="Work Process 3" style="scroll-snap-align: start; height: 400px; width: auto; border-radius: 12px; object-fit: contain; shrink-0;" />
+  <img src="/post/2/post-2-4.jpg" alt="Work Process 4" style="scroll-snap-align: start; height: 400px; width: auto; border-radius: 12px; object-fit: contain; shrink-0;" />
 </div>

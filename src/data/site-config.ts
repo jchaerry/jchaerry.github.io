@@ -9,7 +9,7 @@ const siteConfig: SiteConfig = {
         alt: 'Chaeri Jung'
     },
     title: 'Chaeri Jung',
-    subtitle: 'Division of Artificial Intelligence Engineering, <a href="https://www.sookmyung.ac.kr" target="_blank" class="text-[#0072ce] underline decoration-dashed underline-offset-4 hover:decoration-solid hover:decoration-2">Sookmyung Women\'s University</a>',
+    subtitle: 'Division of Artificial Intelligence Engineering, <a href="https://www.sookmyung.ac.kr" target="_blank" class="text-rose-900 underline decoration-dashed underline-offset-4 hover:decoration-solid hover:decoration-2">Sookmyung Women\'s University</a>',
     description: 'Personal blog and portfolio of Chaeri Jung',
     image: {
         src: hero,
@@ -84,7 +84,7 @@ const siteConfig: SiteConfig = {
     ],
     hero: {
         title: 'Welcome to My Corner of the Web!',
-        text: "Hi, I'm **Chaeri Jung**, majoring in <span class=\"text-[#0072ce] font-semibold\">Artificial Intelligence and Big Data</span> at <span class=\"text-[#0072ce] font-semibold\">Sookmyung Women's University</span> and an undergraduate research intern at <a href=\"https://snsec.net\" target=\"_blank\" class=\"text-[#0072ce] font-bold underline decoration-solid underline-offset-4 hover:decoration-2\">SNSec Lab</a>. I focus on <span class=\"text-[#0072ce] font-semibold\">Deep Learning</span> and <span class=\"text-[#0072ce] font-semibold\">Self-Supervised Learning</span>, specifically applied to Anomaly Detection and Data-driven Security. I am constantly learning and building projects to solve real-world problems through data-driven approaches. \n\nFeel free to explore some of my coding endeavors on <a href=\"https://github.com/jchaerry\" target=\"_blank\" class=\"text-[#0072ce] font-bold underline decoration-solid underline-offset-4 hover:decoration-2\">GitHub</a>.",
+        text: "Hi, I'm **Chaeri Jung**, majoring in <span class=\"text-rose-900 font-semibold\">Artificial Intelligence and Big Data</span> at <span class=\"text-rose-900 font-semibold\">Sookmyung Women's University</span> and an undergraduate research intern at <a href=\"https://snsec.net\" target=\"_blank\" class=\"text-rose-900 font-bold underline decoration-solid underline-offset-4 hover:decoration-2\">SNSec Lab</a>. I focus on <span class=\"text-rose-900 font-semibold\">Deep Learning</span> and <span class=\"text-rose-900 font-semibold\">Self-Supervised Learning</span>, specifically applied to Anomaly Detection and Data-driven Security. I am constantly learning and building projects to solve real-world problems through data-driven approaches. \n\nFeel free to explore some of my coding endeavors on <a href=\"https://github.com/jchaerry\" target=\"_blank\" class=\"text-rose-900 font-bold underline decoration-solid underline-offset-4 hover:decoration-2\">GitHub</a>.",
         image: {
             src: hero,
             alt: 'chaeri\'s travel photo taken in Germany'
