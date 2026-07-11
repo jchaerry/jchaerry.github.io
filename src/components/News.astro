@@ -1,6 +1,7 @@
 ---
 // src/components/News.astro
 import newsList from '../data/news.json';
+import Button from './Button.astro';
 
 const latestNews = newsList.slice(0, 5);
 ---
@@ -15,10 +16,16 @@ const latestNews = newsList.slice(0, 5);
                     {news.date}
                 </span>
                 <p 
-                class="text-xl text-gray-900 dark:text-gray-100 leading-relaxed [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-gray-300 dark:[&_a]:decoration-gray-600 [&_a]:transition-colors hover:[&_a]:text-rose-900 dark:hover:[&_a]:text-rose-900 hover:[&_a]:decoration-rose-900 dark:hover:[&_a]:decoration-rose-900" 
+                class="text-xl text-gray-900 dark:text-gray-100 leading-relaxed [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-gray-300 dark:[&_a]:decoration-gray-600 [&_a]:transition-colors [&_a:hover]:text-rose-900 dark:[&_a:hover]:text-rose-900 [&_a:hover]:decoration-rose-900 dark:[&_a:hover]:decoration-rose-900"
                 set:html={news.title} 
                 />
             </li>
         ))}
     </ul>
+
+    {newsList.length > 5 && (
+        <div class="mt-12 sm:mt-16">
+            <Button href="/news">View All News</Button>
+        </div>
+    )}
 </div>

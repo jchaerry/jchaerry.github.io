@@ -63,7 +63,14 @@ This experience taught me so much more than just how to present my work; it gave
 
 For those interested in the technical details of my work, I have shared my presentation slides below. It was a privilege to share my findings with the community, and I hope they can be useful to others in the field.
 
-<iframe src="/post/3/2026_DSN_Presentation.pdf" class="w-full h-[500px] rounded-lg border border-gray-200 dark:border-gray-800 my-6" title="Conference Presentation Slides", style="margin-bottom: 50px"></iframe>
+<iframe src="/post/3/2026_DSN_Presentation.pdf" class="w-full h-[500px] rounded-lg border border-gray-200 dark:border-gray-800 mt-6" title="Conference Presentation Slides"></iframe>
+
+<p class="text-center text-base text-gray-400 dark:text-gray-500 mt-2" style="margin-bottom: 50px">
+  Best viewed on desktop —
+  <a href="/post/3/2026_DSN_Presentation.pdf" target="_blank" rel="noopener noreferrer" class="font-medium underline underline-offset-4 decoration-gray-300 dark:decoration-gray-600 hover:text-rose-900 hover:decoration-rose-900 transition-colors">
+    view PDF in new tab ↗
+  </a>
+</p>
 
 Looking back, those days in Charlotte were an unforgettable chapter of learning and growth. I would like to take this opportunity to express my deepest gratitude to my advisor, **Prof.Jeong**, and my best partner and colleague, **Chaeyoung**, who walked alongside me through the long journey from writing the paper to delivering this presentation. I couldn't have done it without their endless support. 
 
