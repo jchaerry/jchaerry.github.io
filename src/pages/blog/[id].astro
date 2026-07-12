@@ -75,6 +75,40 @@ const { Content } = await render(post);
         )
     }
     <Subscribe class="my-16 sm:my-24" />
+
+    <div
+        id="lightbox"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 p-4"
+    >
+        <button
+            id="lightbox-close"
+            class="absolute top-4 right-4 cursor-pointer text-3xl leading-none text-white/80 hover:text-white"
+            aria-label="Close"
+        >
+            &times;
+        </button>
+        <button
+            id="lightbox-prev"
+            class="absolute left-2 cursor-pointer p-2 text-4xl text-white/70 hover:text-white sm:left-6"
+            aria-label="Previous"
+        >
+            &#8249;
+        </button>
+        <img
+            id="lightbox-img"
+            src=""
+            alt=""
+            class="max-h-[80vh] max-w-[85vw] rounded-lg object-contain select-none"
+        />
+        <button
+            id="lightbox-next"
+            class="absolute right-2 cursor-pointer p-2 text-4xl text-white/70 hover:text-white sm:right-6"
+            aria-label="Next"
+        >
+            &#8250;
+        </button>
+        <div id="lightbox-counter" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/60"></div>
+    </div>
 </BaseLayout>
 
 <script>
@@ -96,5 +130,101 @@ const { Content } = await render(post);
                 button.innerText = label;
             }, 2500);
         }
+
+        const proseContent = document.querySelector('.prose');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+        const lightboxCounter = document.getElementById('lightbox-counter');
+        const closeBtn = document.getElementById('lightbox-close');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+
+        let currentGroup: HTMLImageElement[] = [];
+        let currentIndex = 0;
+
+        function updateLightboxImage() {
+            const img = currentGroup[currentIndex];
+            if (!img || !lightboxImg) return;
+            lightboxImg.src = img.currentSrc || img.src;
+            lightboxImg.alt = img.alt;
+            const showNav = currentGroup.length > 1;
+            prevBtn?.classList.toggle('hidden', !showNav);
+            nextBtn?.classList.toggle('hidden', !showNav);
+            if (lightboxCounter) {
+                lightboxCounter.textContent = showNav ? `${currentIndex + 1} / ${currentGroup.length}` : '';
+            }
+        }
+
+        function openLightbox(images: HTMLImageElement[], index: number) {
+            currentGroup = images;
+            currentIndex = index;
+            updateLightboxImage();
+            lightbox?.classList.remove('hidden');
+            lightbox?.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeLightbox() {
+            lightbox?.classList.add('hidden');
+            lightbox?.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function showPrev() {
+            if (!currentGroup.length) return;
+            currentIndex = (currentIndex - 1 + currentGroup.length) % currentGroup.length;
+            updateLightboxImage();
+        }
+
+        function showNext() {
+            if (!currentGroup.length) return;
+            currentIndex = (currentIndex + 1) % currentGroup.length;
+            updateLightboxImage();
+        }
+
+        proseContent?.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            if (target.tagName !== 'IMG') return;
+            const parent = target.parentElement;
+            const images = parent
+                ? (Array.from(parent.querySelectorAll('img')) as HTMLImageElement[])
+                : [target as HTMLImageElement];
+            openLightbox(images, images.indexOf(target as HTMLImageElement));
+        });
+
+        closeBtn?.addEventListener('click', closeLightbox);
+        prevBtn?.addEventListener('click', showPrev);
+        nextBtn?.addEventListener('click', showNext);
+
+        lightbox?.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox?.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showPrev();
+            if (e.key === 'ArrowRight') showNext();
+        });
+
+        let touchStartX = 0;
+        lightboxImg?.addEventListener(
+            'touchstart',
+            (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            },
+            { passive: true }
+        );
+
+        lightboxImg?.addEventListener(
+            'touchend',
+            (e) => {
+                const delta = e.changedTouches[0].screenX - touchStartX;
+                if (Math.abs(delta) > 40) {
+                    delta < 0 ? showNext() : showPrev();
+                }
+            },
+            { passive: true }
+        );
     });
 </script>
