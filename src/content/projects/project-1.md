@@ -55,7 +55,7 @@ Our comprehensive evaluation shows that **DRIFT** significantly mitigates perfor
 
 * **Code Repository:** [GitHub - snsec-net/2026-DSN-DRIFT](https://github.com/snsec-net/2026-DSN-DRIFT)
 * **Dataset:** [Download Dataset via IEEE dataport](https://ieee-dataport.org/documents/longitudinal-benign-and-dga-domain-name-dataset)
-* **Official Paper:** 추가 예정
+* **Official Paper:** [DOI - 10.1109/DSN69566.2026.00077](https://doi.org/10.1109/DSN69566.2026.00077)
 
 ---
 *For more details, you can check the full paper or contact me.*
