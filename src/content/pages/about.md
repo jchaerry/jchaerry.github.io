@@ -24,19 +24,76 @@ I am a senior at **Sookmyung Women's University**, majoring in Artificial Intell
 Currently, I study how AI can be applied to cybersecurity. My current focus is on building anomaly detection systems using Deep Learning and Self-Supervised Learning, aiming to make data-driven security more practical and reliable.
 
 
+## Education
+
+<div class="not-prose border-l-2 border-gray-200 dark:border-gray-800 pl-5 hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+    <div class="mb-2">
+        <span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 dark:text-blue-300 dark:bg-blue-900/30 rounded">BS</span>
+    </div>
+    <h3 class="font-serif !text-xl font-bold text-gray-900 dark:text-gray-100 mb-1.5 leading-tight">B.S. Division of Artificial Intelligence Engineering (minoring in Big Data)</h3>
+    <p class="text-[14px] text-gray-600 dark:text-gray-400 mb-1 leading-relaxed">Sookmyung Women's University</p>
+    <p class="text-[13px] italic text-gray-400 dark:text-gray-500">2023.03 – Current · GPA: 4.48 / 4.5 · Advisor: Prof. Seonghoon Jeong</p>
+</div>
+
 ## Research Interests
 
 My core research focuses on **Data-driven Security**. I am particularly interested in leveraging advanced machine learning techniques to solve real-world security challenges:
 
-* **Deep Learning & Self-Supervised Learning (SSL):** Developing models that can learn robust representations from unlabeled data, especially for scenarios where labeled security data is scarce.
-* **Anomaly & Intrusion Detection:** Engineering algorithms to identify malicious behaviors and novel threats within complex network traffic and system logs.
-* **Adversarial Machine Learning:** Enhancing the robustness of AI models against adversarial attacks and ensuring security in the model's deployment phase.
+<div class="not-prose flex flex-col gap-4">
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-6">
+        <span class="text-[13px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 min-w-[140px] shrink-0">Core Tech</span>
+        <div class="flex flex-wrap gap-2">
+            <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Deep Learning</span>
+            <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Self-Supervised Learning</span>
+        </div>
+    </div>
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-6">
+        <span class="text-[13px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 min-w-[140px] shrink-0">Security Focus</span>
+        <div class="flex flex-wrap gap-2">
+            <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Anomaly Detection</span>
+            <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Intrusion Detection</span>
+        </div>
+    </div>
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-6">
+        <span class="text-[13px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 min-w-[140px] shrink-0">Future Interests</span>
+        <div class="flex flex-wrap gap-2">
+            <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Adversarial Machine Learning</span>
+            <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Concept Drift Adaptation</span>
+            <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Federated Learning</span>
+        </div>
+    </div>
+</div>
 
 ## Tech Stack & Tools
 
 I use a variety of tools for research and development, focusing on efficient data processing and model implementation:
 
-* **Main Stacks:** Linux, Python, PyTorch, Pandas, Scikit-learn, Git
+<div class="not-prose flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-6">
+    <span class="text-[13px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 min-w-[140px] shrink-0">Main Stacks</span>
+    <div class="flex flex-wrap gap-2">
+        <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Linux</span>
+        <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Python</span>
+        <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">PyTorch</span>
+        <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Pandas</span>
+        <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Scikit-learn</span>
+        <span class="inline-block px-3 py-1 text-[13px] rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300">Git</span>
+    </div>
+</div>
+
+## Certifications
+
+<div class="not-prose flex flex-col gap-6">
+    <div class="border-l-2 border-gray-200 dark:border-gray-800 pl-5 hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+        <h3 class="font-serif !text-xl font-bold text-gray-900 dark:text-gray-100 mb-1.5 leading-tight">ADsP (Advanced Data Analytics Semi-Professional)</h3>
+        <p class="text-[14px] text-gray-600 dark:text-gray-400 mb-1 leading-relaxed">한국데이터산업진흥원</p>
+        <p class="text-[13px] italic text-gray-400 dark:text-gray-500">2025.06</p>
+    </div>
+    <div class="border-l-2 border-gray-200 dark:border-gray-800 pl-5 hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+        <h3 class="font-serif !text-xl font-bold text-gray-900 dark:text-gray-100 mb-1.5 leading-tight">SQLD (SQL Developer)</h3>
+        <p class="text-[14px] text-gray-600 dark:text-gray-400 mb-1 leading-relaxed">한국데이터산업진흥원</p>
+        <p class="text-[13px] italic text-gray-400 dark:text-gray-500">2025.04</p>
+    </div>
+</div>
 
 ## Vision & Goal
 
@@ -46,9 +103,22 @@ Beyond building high-performance models, I constantly ask: **"How reliable and e
 
 I'm always open to discussing research, collaboration, or potential opportunities. Feel free to reach out!
 
-* **Email:** [chaerry502@sookmyung.ac.kr](mailto:chaerry502@sookmyung.ac.kr)
-* **GitHub:** [https://github.com/jchaerry](https://github.com/jchaerry)
-* **ORCID:** <img 
-    src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" 
-    style="display:inline !important; vertical-align: middle; margin-top: 0 !important; margin-bottom: 0 !important; margin-right: 4px; width: 14px; height: 14px; border: none;" 
-/>[0009-0006-0247-5167](https://orcid.org/0009-0006-0247-5167)
+<div class="not-prose flex flex-col gap-3">
+    <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-6">
+        <span class="text-[13px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 min-w-[140px] shrink-0">Email</span>
+        <a href="mailto:chaerry502@sookmyung.ac.kr" class="text-[16px] text-gray-700 dark:text-gray-300 underline underline-offset-4 decoration-gray-300 dark:decoration-gray-600 hover:text-rose-900 dark:hover:text-rose-900 hover:decoration-rose-900 transition-colors">chaerry502@sookmyung.ac.kr</a>
+    </div>
+    <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-6">
+        <span class="text-[13px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 min-w-[140px] shrink-0">GitHub</span>
+        <a href="https://github.com/jchaerry" target="_blank" rel="noopener noreferrer" class="text-[16px] text-gray-700 dark:text-gray-300 underline underline-offset-4 decoration-gray-300 dark:decoration-gray-600 hover:text-rose-900 dark:hover:text-rose-900 hover:decoration-rose-900 transition-colors">github.com/jchaerry</a>
+    </div>
+    <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-6">
+        <span class="text-[13px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 min-w-[140px] shrink-0">ORCID</span>
+        <a href="https://orcid.org/0009-0006-0247-5167" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[15px] text-gray-700 dark:text-gray-300 underline underline-offset-4 decoration-gray-300 dark:decoration-gray-600 hover:text-rose-900 dark:hover:text-rose-900 hover:decoration-rose-900 transition-colors">
+            <img
+                src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png"
+                style="width: 14px; height: 14px; border: none;"
+                alt=""
+            />0009-0006-0247-5167</a>
+    </div>
+</div>
