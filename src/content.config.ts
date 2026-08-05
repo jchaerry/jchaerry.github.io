@@ -44,6 +44,11 @@ const projects = defineCollection({
         z.object({
             title: z.string(),
             description: z.string().optional(),
+            categories: z.array(z.string()).default([]),
+            award: z.string().optional(),
+            techStack: z.array(z.string()).default([]),
+            githubUrl: z.string().url().optional(),
+            demoUrl: z.string().url().optional(),
             publishDate: z.coerce.date(),
             isFeatured: z.boolean().default(false),
             seo: seoSchema(image).optional()
