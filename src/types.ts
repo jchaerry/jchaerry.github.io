@@ -18,6 +18,7 @@ export type Hero = {
     text?: string;
     image?: ImageInput;
     actions?: Link[];
+    roles?: string[];
 };
 
 export type SubscribeForm = {

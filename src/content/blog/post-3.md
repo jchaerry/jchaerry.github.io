@@ -63,11 +63,11 @@ This experience taught me so much more than just how to present my work; it gave
 
 For those interested in the technical details of my work, I have shared my presentation slides below. It was a privilege to share my findings with the community, and I hope they can be useful to others in the field.
 
-<iframe src="/post/3/2026_DSN_Presentation.pdf" class="w-full h-[500px] rounded-lg border border-gray-200 dark:border-gray-800 mt-6" title="Conference Presentation Slides"></iframe>
+<iframe src="/post/3/2026_DSN_Presentation.pdf" class="w-full h-[500px] rounded-lg border border-border mt-6" title="Conference Presentation Slides"></iframe>
 
-<p class="text-center text-base text-gray-400 dark:text-gray-500 mt-2" style="margin-bottom: 50px">
+<p class="text-center text-base text-muted mt-2" style="margin-bottom: 50px">
   Best viewed on desktop —
-  <a href="/post/3/2026_DSN_Presentation.pdf" target="_blank" rel="noopener noreferrer" class="font-medium underline underline-offset-4 decoration-gray-300 dark:decoration-gray-600 hover:text-rose-900 hover:decoration-rose-900 transition-colors">
+  <a href="/post/3/2026_DSN_Presentation.pdf" target="_blank" rel="noopener noreferrer" class="font-medium underline underline-offset-4 decoration-border hover:text-accent hover:decoration-accent transition-colors">
     view PDF in new tab ↗
   </a>
 </p>
@@ -76,6 +76,6 @@ Looking back, those days in Charlotte were an unforgettable chapter of learning 
 
 As the conference came to a close on the 25th, I felt a deep sense of accomplishment. With the major work finished, I was ready to head to Florida to recharge and reflect on everything I had experienced. My next post will cover the relaxation that followed in Clearwater and Orlando.
 
-<p class="text-right text-sm text-gray-400 italic mt-8">
+<p class="text-right text-sm text-muted italic mt-8">
   Most of the photos by Chaeyoung
 </p>

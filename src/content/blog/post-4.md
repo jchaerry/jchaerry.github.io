@@ -66,6 +66,6 @@ Looking back, this Florida trip was exactly what I needed after months of intens
   <img src="/post/4/post4-23.jpg" alt="Work Process 23" style="scroll-snap-align: start; height: 400px; width: auto; border-radius: 12px; object-fit: contain; shrink-0;" />
 </div>
 
-<p class="text-right text-sm text-gray-400 italic mt-8">
+<p class="text-right text-sm text-muted italic mt-8">
   Most of the photos by Chaeyoung
 </p>

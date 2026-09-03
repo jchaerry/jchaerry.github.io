@@ -7,18 +7,18 @@ const allNews = newsList;
 
 <BaseLayout title="News" showHeader={false}>
     <div class="mx-auto max-w-3xl px-4 py-10">
-        <h1 class="mb-12 font-serif text-3xl italic text-theme-foreground border-b pb-4 border-gray-200 dark:border-gray-800">
+        <h1 class="mb-12 font-bold text-3xl tracking-tight text-strong border-b pb-4 border-border">
             News
         </h1>
 
         <ul class="flex flex-col gap-6 sm:gap-8">
             {allNews.map((news) => (
                 <li class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-6">
-                    <span class="text-lg text-gray-500 dark:text-gray-400 min-w-[140px] shrink-0">
+                    <span class="text-lg text-muted min-w-[140px] shrink-0">
                         {news.date}
                     </span>
                     <p
-                    class="text-xl text-gray-900 dark:text-gray-100 leading-relaxed [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-gray-300 dark:[&_a]:decoration-gray-600 [&_a]:transition-colors [&_a:hover]:text-rose-900 dark:[&_a:hover]:text-rose-900 [&_a:hover]:decoration-rose-900 dark:[&_a:hover]:decoration-rose-900"
+                    class="text-xl text-main leading-relaxed [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-border [&_a]:transition-colors [&_a:hover]:text-accent [&_a:hover]:decoration-accent"
                     set:html={news.title}
                     />
                 </li>

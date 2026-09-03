@@ -1,7 +1,7 @@
 [
     {
         "date": "Jul 15, 2026",
-        "title": "Our paper “Cleansing Lable Contamination in Popularity-based Ranking Lists for Robust DGA Detection” (Chaeri Jung*, Chaeyoung Lee*, and Seonghoon Jeong) has been accepted at the IEEE International Conference on Future Machine Learning and Data Science (FMLDS) 2026.<br /> <span class='text-sm text-gray-400 dark:text-gray-500'>*equal contribution</span>"
+        "title": "Our paper “Cleansing Lable Contamination in Popularity-based Ranking Lists for Robust DGA Detection” (Chaeri Jung*, Chaeyoung Lee*, and Seonghoon Jeong) has been accepted at the IEEE International Conference on Future Machine Learning and Data Science (FMLDS) 2026.<br /> <span class='text-sm text-muted'>*equal contribution</span>"
     },
     {
         "date": "Jun 03, 2026",
@@ -17,6 +17,6 @@
     },
     {
         "date": "Apr 27, 2026",
-        "title": "Our paper “DRIFT: Drift-Resilient Invariant-Feature Transformer for DGA Detection” (Chaeyoung Lee*, Chaeri Jung*, and Seonghoon Jeong) has received final acceptance for IEEE/IFIP DSN’26.<br /> <span class='text-sm text-gray-400 dark:text-gray-500'>*equal contribution</span>"
+        "title": "Our paper “DRIFT: Drift-Resilient Invariant-Feature Transformer for DGA Detection” (Chaeyoung Lee*, Chaeri Jung*, and Seonghoon Jeong) has received final acceptance for IEEE/IFIP DSN’26.<br /> <span class='text-sm text-muted'>*equal contribution</span>"
     }
 ]

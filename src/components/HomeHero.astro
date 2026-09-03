@@ -1,0 +1,118 @@
+---
+import siteConfig from '../data/site-config';
+import Button from './Button.astro';
+import CustomImage from './CustomImage.astro';
+
+const { title: eyebrow, actions, roles = [] } = siteConfig.hero ?? {};
+const nameParts = siteConfig.title.split(' ');
+const firstName = nameParts.shift() ?? '';
+const lastName = nameParts.join(' ');
+const rolesJson = JSON.stringify(roles);
+---
+
+<section class="relative mb-16 overflow-hidden sm:mb-24">
+    <div class="hero-stars" aria-hidden="true"></div>
+    <div class="relative grid grid-cols-1 items-center gap-8 sm:grid-cols-[1fr_auto] sm:gap-10">
+        <div>
+            {eyebrow && <p class="mb-3 font-mono text-xs text-accent sm:text-sm">{eyebrow}</p>}
+            <h1 class="font-bold text-4xl leading-tight tracking-tight sm:text-5xl">
+                {firstName} {lastName && <span class="text-gradient">{lastName}</span>}
+            </h1>
+            {
+                siteConfig.subtitle && (
+                    <p class="mt-2 text-sm leading-tight text-muted" set:html={siteConfig.subtitle} />
+                )
+            }
+            {
+                roles.length > 0 && (
+                    <p class="mt-5 min-h-[1.6em] font-mono text-base text-muted sm:text-lg">
+                        <span>I'm </span><span id="typed-roles" data-roles={rolesJson} /><span class="typed-cursor" aria-hidden="true">▍</span>
+                    </p>
+                )
+            }
+            {
+                actions && actions.length > 0 && (
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        {actions.map((action) => (
+                            <Button href={action.href}>{action.text}</Button>
+                        ))}
+                    </div>
+                )
+            }
+            {
+                siteConfig.socialLinks && siteConfig.socialLinks.length > 0 && (
+                    <div class="mt-5 flex flex-wrap gap-2">
+                        {siteConfig.socialLinks.map((link) => (
+                            <a
+                                class="chip"
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {link.text}
+                            </a>
+                        ))}
+                    </div>
+                )
+            }
+        </div>
+        {
+            siteConfig.avatar?.src && (
+                <CustomImage
+                    class="mx-auto aspect-square w-32 rounded-full object-cover shadow-lg ring-4 ring-surface sm:mx-0 sm:w-44"
+                    {...siteConfig.avatar}
+                    loading="eager"
+                    fetchpriority="high"
+                    width={176}
+                    height={176}
+                    widths={[176, 352]}
+                    sizes="176px"
+                />
+            )
+        }
+    </div>
+</section>
+
+<script>
+    function initTypedRoles() {
+        const el = document.getElementById('typed-roles');
+        if (!el || el.dataset.typedReady) return;
+        el.dataset.typedReady = 'true';
+
+        const roles: string[] = JSON.parse(el.dataset.roles ?? '[]');
+        if (roles.length === 0) return;
+
+        let roleIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        const tick = () => {
+            const word = roles[roleIndex];
+            if (!deleting) {
+                charIndex++;
+                el.textContent = word.slice(0, charIndex);
+                if (charIndex === word.length) {
+                    deleting = true;
+                    setTimeout(tick, 1800);
+                    return;
+                }
+                setTimeout(tick, 65);
+            } else {
+                charIndex--;
+                el.textContent = word.slice(0, charIndex);
+                if (charIndex === 0) {
+                    deleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    setTimeout(tick, 350);
+                    return;
+                }
+                setTimeout(tick, 30);
+            }
+        };
+
+        tick();
+    }
+
+    initTypedRoles();
+    document.addEventListener('astro:page-load', initTypedRoles);
+</script>

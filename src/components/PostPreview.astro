@@ -6,33 +6,40 @@ import FormattedDate from './FormattedDate.astro';
 type Props = { post: CollectionEntry<'blog'>; class?: string; headingLevel?: 'h2' | 'h3' };
 
 const { post, class: className, headingLevel = 'h2' } = Astro.props;
-const { title, publishDate, updatedDate, excerpt } = post.data;
+const { title, publishDate, updatedDate, excerpt, tags = [] } = post.data;
 const TitleTag = headingLevel;
 ---
 
-<a class:list={['group flex items-start justify-between gap-8', className]} href={`/blog/${post.id}/`}>
-    <div class="grow">
-        <TitleTag
-            class="font-serif text-xl leading-tight font-medium group-hover:underline group-hover:decoration-dashed group-hover:decoration-1 group-hover:underline-offset-4 sm:text-2xl"
-        >
-            {title}
-        </TitleTag>
-        <div class="mt-1 text-sm leading-normal">
-            <FormattedDate date={publishDate} />
-            {
-                updatedDate && (
-                    <>
-                        {' '}
-                        <span>
-                            (Updated on <FormattedDate date={updatedDate} />)
-                        </span>
-                    </>
-                )
-            }
-        </div>
-        {excerpt && <div class="mt-3 text-sm leading-normal">{excerpt}</div>}
+<a class:list={['card card-hover reveal group flex flex-col gap-2', className]} href={`/blog/${post.id}/`}>
+    <div class="flex flex-wrap items-center gap-2 font-mono text-xs text-muted">
+        <FormattedDate date={publishDate} />
+        {
+            updatedDate && (
+                <>
+                    <span class="opacity-50">·</span>
+                    <span>
+                        updated <FormattedDate date={updatedDate} />
+                    </span>
+                </>
+            )
+        }
     </div>
-    <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:shrink-0 sm:items-center sm:gap-1">
+    <TitleTag class="font-bold text-xl leading-tight tracking-tight group-hover:text-accent transition-colors sm:text-2xl">
+        {title}
+    </TitleTag>
+    {excerpt && <p class="text-sm leading-normal text-muted">{excerpt}</p>}
+    {
+        tags.length > 0 && (
+            <div class="flex flex-wrap gap-1.5 pt-1">
+                {tags.map((tag) => (
+                    <span class="rounded-full border border-border px-2 py-0.5 font-mono text-[11px] tracking-wide text-muted uppercase">
+                        {tag}
+                    </span>
+                ))}
+            </div>
+        )
+    }
+    <div class="mt-1 hidden items-center gap-1 font-semibold text-accent opacity-0 transition group-hover:opacity-100 sm:inline-flex">
         Read Post <ArrowRight class="h-4 w-4 fill-current" />
     </div>
 </a>

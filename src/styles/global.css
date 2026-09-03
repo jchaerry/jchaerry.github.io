@@ -1,6 +1,5 @@
 @import '@fontsource-variable/inter' layer(base);
-@import '@fontsource-variable/newsreader' layer(base);
-@import '@fontsource-variable/newsreader/wght-italic.css' layer(base);
+@import '@fontsource-variable/jetbrains-mono' layer(base);
 
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
@@ -8,72 +7,88 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-    --text-main: #171717;
-    --bg-main: #f2f1ec;
-    --bg-muted: #eae9e1;
-    --border-main: #171717;
+    --text-main: #18181b;
+    --text-strong: #09090b;
+    --muted: #52525b;
+    --bg-main: #fafafa;
+    --bg-muted: #f4f4f5;
+    --surface: #ffffff;
+    --border-main: #e4e4e7;
+    --accent: #9f1239;
+    --accent-strong: #881337;
+    --accent-2: #f43f5e;
+    --accent-glow: rgba(159, 18, 57, 0.16);
+    --on-accent: #ffffff;
 }
 html.dark {
-    --text-main: #f2f1ec;
-    --bg-main: #171717;
-    --bg-muted: #242424;
-    --border-main: #f2f1ec;
+    --text-main: #d4d4d8;
+    --text-strong: #f4f4f5;
+    --muted: #a1a1aa;
+    --bg-main: #19191c;
+    --bg-muted: #2c2c30;
+    --surface: #232326;
+    --border-main: #3a3a3f;
+    --accent: #fb7185;
+    --accent-strong: #fda4af;
+    --accent-2: #f9a8d4;
+    --accent-glow: rgba(251, 113, 133, 0.2);
+    --on-accent: #1a0a0d;
 }
-
-/* Cyan */
-/*
-:root {
-    --text-main: #162a2b;
-    --bg-main: #d6e0e2;
-    --bg-muted: #ccd8db;
-    --border-main: #162a2b;
-}
-html.dark {
-    --text-main: #d6e0e2;
-    --bg-main: #162a2b;
-    --bg-muted: #1c3537;
-    --border-main: #d6e0e2;
-}
-*/
-
-/* Green */
-/*
-:root {
-    --text-main: #3a4238;
-    --bg-main: #f3efe6;
-    --bg-muted: #eee9dc;
-    --border-main: #3a4238;
-}
-html.dark {
-    --text-main: #f3efe6;
-    --bg-main: #5e6c5b;
-    --bg-muted: #596756;
-    --border-main: #f3efe6;
-}
-*/
 
 @theme inline {
     --font-sans: 'Inter Variable', sans-serif;
-    --font-serif: 'Newsreader Variable', serif;
+    --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
     --text-color-main: var(--text-main);
+    --text-color-strong: var(--text-strong);
+    --text-color-muted: var(--muted);
+    --text-color-accent: var(--accent);
+    --text-color-accent-strong: var(--accent-strong);
+    --text-color-accent-2: var(--accent-2);
+    --text-color-on-accent: var(--on-accent);
+
     --background-color-main: var(--bg-main);
     --background-color-muted: var(--bg-muted);
+    --background-color-surface: var(--surface);
+    --background-color-accent: var(--accent);
+    --background-color-accent-strong: var(--accent-strong);
+    --background-color-accent-2: var(--accent-2);
+    --background-color-on-accent: var(--on-accent);
+
     --border-color-main: var(--border-main);
+    --border-color-border: var(--border-main);
+    --border-color-accent: var(--accent);
+    --border-color-accent-2: var(--accent-2);
+
+    --color-accent: var(--accent);
+    --color-accent-strong: var(--accent-strong);
+    --color-accent-2: var(--accent-2);
+    --color-on-accent: var(--on-accent);
+    --color-strong: var(--text-strong);
+    --color-muted: var(--muted);
+    --color-surface: var(--surface);
+    --color-border: var(--border-main);
+}
+
+@layer base {
+    ::selection {
+        background: var(--accent-glow);
+    }
 }
 
 @layer utilities {
     .prose {
         --tw-prose-body: var(--text-color-main);
-        --tw-prose-headings: var(--text-color-main);
+        --tw-prose-headings: var(--text-color-strong);
         --tw-prose-lead: var(--text-color-main);
-        --tw-prose-links: var(--text-color-main);
-        --tw-prose-bold: var(--text-color-main);
-        --tw-prose-counters: var(--text-color-main);
-        --tw-prose-bullets: var(--text-color-main);
+        --tw-prose-links: var(--text-color-accent);
+        --tw-prose-bold: var(--text-color-strong);
+        --tw-prose-counters: var(--text-color-muted);
+        --tw-prose-bullets: var(--text-color-muted);
         --tw-prose-hr: var(--border-color-main);
         --tw-prose-quotes: var(--text-color-main);
-        --tw-prose-quote-borders: var(--border-color-main);
-        --tw-prose-captions: var(--text-color-main);
+        --tw-prose-quote-borders: var(--color-accent);
+        --tw-prose-captions: var(--text-color-muted);
         --tw-prose-kbd: var(--text-color-main);
         --tw-prose-code: var(--text-color-main);
         --tw-prose-th-borders: var(--border-color-main);
@@ -81,22 +96,107 @@ html.dark {
     }
 
     .prose a {
-        @apply underline font-normal decoration-1 underline-offset-2 decoration-dashed hover:decoration-solid;
+        @apply underline font-medium decoration-2 underline-offset-2 decoration-accent/40 hover:decoration-accent;
     }
 
     .prose img {
-        @apply cursor-zoom-in transition-opacity hover:opacity-90;
+        @apply rounded-2xl cursor-zoom-in transition-opacity hover:opacity-90;
     }
 
     .prose :where(h1, h2, h3, h4, h5, h6) {
-        @apply font-serif font-medium;
+        @apply font-sans font-bold tracking-tight;
     }
 
     .prose :where(code, strong) {
-        @apply font-medium;
+        @apply font-semibold;
     }
 
     .prose blockquote {
-        @apply font-serif font-normal italic border-none pl-0 text-[1.375em] leading-snug sm:text-[1.66667em];
+        @apply not-italic font-normal border-l-4 border-accent/50 pl-4;
+    }
+
+    .prose code {
+        @apply font-mono rounded-md border border-border bg-muted px-1.5 py-0.5 text-[0.88em] before:content-none after:content-none;
+    }
+
+    .card {
+        @apply rounded-2xl border border-border bg-surface p-5 shadow-sm transition-all;
+    }
+
+    .card-hover {
+        @apply hover:-translate-y-0.5 hover:shadow-md hover:border-accent/40;
+    }
+
+    .chip {
+        @apply inline-block rounded-full border border-border px-3 py-1 text-[13px] text-main transition-colors hover:border-accent hover:text-accent;
+    }
+
+    .eyebrow {
+        @apply font-mono text-xs uppercase tracking-[0.14em] text-accent;
+    }
+
+    .text-gradient {
+        background: linear-gradient(120deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/* ==========================================================================
+   Hero: starfield background + typing cursor
+   ========================================================================== */
+
+.hero-stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, color-mix(in srgb, var(--accent) 55%, transparent) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 40% 70%, color-mix(in srgb, var(--accent-2) 45%, transparent) 50%, transparent 51%),
+        radial-gradient(1px 1px at 60% 20%, color-mix(in srgb, var(--accent) 45%, transparent) 50%, transparent 51%),
+        radial-gradient(2px 2px at 80% 55%, color-mix(in srgb, var(--accent-2) 50%, transparent) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 90% 85%, color-mix(in srgb, var(--accent) 45%, transparent) 50%, transparent 51%),
+        radial-gradient(1px 1px at 15% 85%, color-mix(in srgb, var(--accent-2) 45%, transparent) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 70% 90%, color-mix(in srgb, var(--accent) 40%, transparent) 50%, transparent 51%),
+        radial-gradient(1px 1px at 30% 10%, color-mix(in srgb, var(--accent-2) 40%, transparent) 50%, transparent 51%);
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.typed-cursor {
+    animation: typed-blink 1s step-end infinite;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+@keyframes typed-blink {
+    from, to {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   Scroll reveal
+   ========================================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }

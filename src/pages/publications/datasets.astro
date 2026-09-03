@@ -8,14 +8,14 @@ const datasets = (await getCollection('datasets')).sort(sortItemsByDateDesc);
 
 <BaseLayout title="Datasets" showHeader={false}>
   <div class="mx-auto max-w-3xl px-4 py-10">
-    <h1 class="mb-12 font-serif text-3xl italic text-theme-foreground border-b pb-4 border-gray-200 dark:border-gray-800">
+    <h1 class="mb-12 font-bold text-3xl tracking-tight text-strong border-b pb-4 border-border">
       Datasets
     </h1>
 
     {datasets.length > 0 ? (
       <div class="flex flex-col gap-10">
         {datasets.map((dataset) => (
-          <div class="flex flex-col relative border-l-2 border-gray-200 dark:border-gray-800 pl-5 hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+          <div class="reveal flex flex-col relative rounded-2xl border border-border bg-surface p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md hover:border-accent/40">
             
             {/* 특이사항 뱃지 (초록색 테마) */}
             {dataset.data.note && (
@@ -27,16 +27,16 @@ const datasets = (await getCollection('datasets')).sort(sortItemsByDateDesc);
             )}
 
             {/* 제목 */}
-            <h2 class="font-serif text-lg font-bold text-gray-900 dark:text-gray-100 mb-1.5 leading-tight">
+            <h2 class="font-bold text-lg text-strong mb-1.5 leading-tight tracking-tight">
               {dataset.data.title}
             </h2>
             
             {/* 사람 (저자) */}
-            <p class="text-[14px] text-gray-600 dark:text-gray-400 mb-1 leading-relaxed" set:html={dataset.data.authors} />
+            <p class="text-[14px] text-muted mb-1 leading-relaxed" set:html={dataset.data.authors} />
             
             {/* 공개 사이트 */}
             {dataset.data.site && (
-              <p class="text-[13px] italic text-gray-400 dark:text-gray-500 mb-3">
+              <p class="text-[13px] not-italic font-mono text-muted mb-3">
                 {dataset.data.site}
               </p>
             )}
@@ -48,9 +48,9 @@ const datasets = (await getCollection('datasets')).sort(sortItemsByDateDesc);
                   href={dataset.data.url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  class="text-xs font-medium text-gray-400 hover:text-black dark:hover:text-white transition-colors underline underline-offset-4 decoration-gray-200 dark:decoration-gray-800"
+                  class="text-xs font-semibold text-accent hover:text-accent-strong transition-colors underline underline-offset-4 decoration-accent/40 hover:decoration-accent"
                 >
-                  View Dataset ↗
+                  DOI ↗
                 </a>
               </div>
             )}
@@ -58,7 +58,7 @@ const datasets = (await getCollection('datasets')).sort(sortItemsByDateDesc);
         ))}
       </div>
     ) : (
-      <p class="text-sm text-gray-400 italic">No datasets published yet.</p>
+      <p class="text-sm text-muted italic">No datasets published yet.</p>
     )}
   </div>
 </BaseLayout>
