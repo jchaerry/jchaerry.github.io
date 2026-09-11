@@ -11,4 +11,4 @@ _Email:_
 Feel free to drop me an email at [chaerry502@sookmyung.ac.kr](mailto:chaerry502@sookmyung.ac.kr), and I'll do my best to respond as soon as possible.
 
 _Social Media:_
-Connect with me on social media as well. Find me on [LinkedIn](https://www.linkedin.com/in/chaeri-jung-84708937a).
+Connect with me on social media as well. Find me on <a href="https://www.linkedin.com/in/chaeri-jung-84708937a" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
